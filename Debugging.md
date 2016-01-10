@@ -6,6 +6,6 @@ The plain WebDav implementation can be launched using InMemoryWebDavServer or Ni
 
 The WebDav servers log by default all requests and response headers. To log request and response bodies the java system property -Dcryptomator.LoggingHttpFilter.methodsToLogDetailed can be used. For example passing
 
-> -Dcryptomator.LoggingHttpFilter.methodsToLog=MOVE,PROPFIND,PROPPATCH
+> -Dcryptomator.LoggingHttpFilter.methodsToLogDetailed=MOVE,PROPFIND,PROPPATCH
 
 to the java process will log request/response bodies for MOVE, PROPFIND and PROPPATCH requests.
