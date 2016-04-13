@@ -5,3 +5,4 @@ Cryptomator supports the following command line options:
 * `-Duser.language=en` to set the interface language to one of:
     * `en` English
     * `de` German
+    * `fr` French
