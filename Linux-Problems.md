@@ -1,0 +1,15 @@
+## apt-get remove fails
+
+when trying to uninstall Cryptomator using `apt-get remove cryptomator` I get an error:
+```
+xdg-mime: file '/opt/Cryptomator/cryptomator.org-Cryptomator-MimeInfo.xml' does not exist
+...
+E: Sub-process /usr/bin/dpkg returned an error code (1)
+```
+
+This is due to a bug in our uninstall script.
+
+A Workaround is:
+```
+sudo cp /opt/Cryptomator/cryptomator-vault-metadata.xml /opt/Cryptomator/cryptomator.org-Cryptomator-MimeInfo.xml
+```
