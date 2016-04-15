@@ -12,4 +12,6 @@ This is due to a bug in our uninstall script.
 A Workaround is:
 ```
 sudo cp /opt/Cryptomator/cryptomator-vault-metadata.xml /opt/Cryptomator/cryptomator.org-Cryptomator-MimeInfo.xml
+sudo apt-get remove cryptomator
+sudo rm /opt/Cryptomator/cryptomator.org-Cryptomator-MimeInfo.xml
 ```
