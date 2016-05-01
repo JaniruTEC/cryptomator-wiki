@@ -27,5 +27,5 @@ The solution to this error is to add the path `C:\Windows\System32\` to the Envi
 
 We don't know why this path may be missing, because it should be [default in a clean Windows installation](http://superuser.com/questions/124239/what-is-the-default-path-environment-variable-setting-on-fresh-install-of-window), but apparently it happens.
 
-## Unable to unlock vault on Windows Server 2008/2012
+## Unable to unlock vault on Win Server 2008/2012
 Please [install Desktop Experience](https://technet.microsoft.com/en-us/library/cc754314.aspx) and try again!
