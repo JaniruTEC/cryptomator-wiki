@@ -4,6 +4,7 @@ Cryptomator supports the following command line options:
 * `-Dcryptomator.logPath` to set the path of the file to which Cryptomator should write its log
 * `-Dcryptomator.upgradeLogPath` to set the path of the file to which Cryptomator should additionally write its log, when migrating a vault
 * `-Duser.language=en` to set the interface language to `en` for English, `de` German, `fr` French and so forth.
+* `-Duser.region=TW` in combination with `-Duser.language=zh` to further specify the dialect
 
 # Windows options
 All of the above command line options can also be added to a Cryptomator installation on Windows. Configuration is done in a text file located under `C:\Program Files\Cryptomator\app\Cryptomator.cfg` or wherever you installed Cryptomator.
