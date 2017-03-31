@@ -1,3 +1,7 @@
+## unable to paste passphrase from keepass
+
+installing `xsel` supposedly fixes this. See issue [#226](https://github.com/cryptomator/cryptomator/issues/226).
+
 ## apt-get remove fails
 
 when trying to uninstall Cryptomator using `apt-get remove cryptomator` I get an error:
