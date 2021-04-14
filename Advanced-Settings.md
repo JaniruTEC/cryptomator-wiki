@@ -9,10 +9,10 @@ Cryptomator supports the following command line options:
 # Windows options
 All of the above command line options can also be added to a Cryptomator installation on Windows. Configuration is done in a text file located under `C:\Program Files\Cryptomator\app\Cryptomator.cfg` or wherever you installed Cryptomator.
 
-E.g. to switch the UI language to Hungarian add the command line option from above to the `[JVMOptions]` section:
+E.g. to switch the UI language to Hungarian add the command line option from above to the `[JavaOptions]` section:
 
 ```
-[JVMOptions]
--Dcryptomator.logPath=%appdata%/Cryptomator/cryptomator.log
--Duser.language=hu
+[JavaOptions]
+java-options=-Dcryptomator.logPath=%appdata%/Cryptomator/cryptomator.log
+java-options=-Duser.language=hu
 ```
