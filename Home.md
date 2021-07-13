@@ -1,5 +1,9 @@
-# ⚠️  STOP! DON'T! DEPRECATED! ⚠️ 
+## Stable Version (1.5.1)
 
-This wiki is deprecated and will probably be shut down within the next months.
+<a href="https://linkify.me/Wu7ckPl"><img src="https://github.com/aidenlab/JuiceboxLegacy/wiki/images/winlogo.png" width=100 align="middle"/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://linkify.me/Wu7ckPl">Cryptomator for Windows</a>
 
-Please head over to https://community.cryptomator.org/, if you'd like to share some knowledge. Login with your existing GitHub account is supported. 😉 
+
+<a href="https://s3.amazonaws.com/hicfiles.tc4ga.com/public/Juicebox.dmg"><img src="https://github.com/aidenlab/JuiceboxLegacy/wiki/images/maclogo.png" width=100 align="middle"/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://s3.amazonaws.com/hicfiles.tc4ga.com/public/Juicebox.dmg">Cryptomator for Mac</a>
+
+
+<a href="https://s3.amazonaws.com/hicfiles.tc4ga.com/public/Juicebox.jar"><img src="https://github.com/aidenlab/JuiceboxLegacy/wiki/images/javalogo.png" width=100 align="middle"/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://s3.amazonaws.com/hicfiles.tc4ga.com/public/Juicebox.jar">Cryptomator jar (Unix, Windows, etc.)</a>
