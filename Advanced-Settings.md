@@ -24,15 +24,32 @@ Cryptomator supports the following command line options:
 
 The command line options come with the following types:
 
-| Argument Type | Valid values                                                                            | Example                                                               | Notes                                                                                                                        |
-|---------------|-----------------------------------------------------------------------------------------|-----------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|
-| Boolean       | "true", "false"                                                                         | -Dcryptomator.showTrayIcon=true                                       | Boolean values are not quoted.                                                                                               |
-| String        | Quoted text                                                                             | -Dcryptomator.loopbackAlias="Cryptomator"                             | Accepted characters/values are not defined by this document.                                                                 |
-| DirPath       | Quoted full path to a folder in the style of your OS, but always using "/" as separator | -Dcryptomator.logDir="/Users/Admin/Logs"                              | Properties containing "cryptomator" might use substitutions.                                                                 |
-| FilePath      | Quoted full path to a file in the style of your OS, but always using "/" as separator   | -Dcryptomator.settingsPath="C:/settings.json"                         | Properties containing "cryptomator" might use substitutions.                                                                 |
-| FilePathList  | List of `FilePaths` divided by ":" (Linux, macOS) or ";" (Windows).                     | -Dcryptomator.integrationsWin.keychainPaths="C:\file.one;C:\file.two" | The entire list is quoted instead of individual entries. Properties containing "cryptomator" might use substitutions.        |
-| Language      | Unquoted ISO 639 alpha-2 or alpha-3 language code                                       | -Duser.language=de                                                    | See paragraph "language" [here.](https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/util/Locale.html)         |
-| Region        | Unquoted ISO 3166 alpha-2 country code                                                  | -Duser.region=CH                                                      | See paragraph "country (region)" [here.](https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/util/Locale.html) |
+| Argument Type | Valid values                                                                            | Example                                                               | Notes                                                                                                                                                                |
+|---------------|-----------------------------------------------------------------------------------------|-----------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Boolean       | "true", "false"                                                                         | -Dcryptomator.showTrayIcon=true                                       | Boolean values are not quoted.                                                                                                                                       |
+| String        | Quoted text                                                                             | -Dcryptomator.loopbackAlias="Cryptomator"                             | Accepted characters/values are not defined by this document.                                                                                                         |
+| DirPath       | Quoted full path to a folder in the style of your OS, but always using "/" as separator | -Dcryptomator.logDir="/Users/Admin/Logs"                              | Might use [substitutions.](https://github.com/cryptomator/cryptomator/wiki/Advanced-Settings#substitutions)                                                          |
+| FilePath      | Quoted full path to a file in the style of your OS, but always using "/" as separator   | -Dcryptomator.settingsPath="C:/settings.json"                         | Might use [substitutions.](https://github.com/cryptomator/cryptomator/wiki/Advanced-Settings#substitutions)                                                          |
+| FilePathList  | List of `FilePaths` divided by ":" (Linux, macOS) or ";" (Windows).                     | -Dcryptomator.integrationsWin.keychainPaths="C:\file.one;C:\file.two" | The entire list is quoted instead of individual entries. Might use [substitutions.](https://github.com/cryptomator/cryptomator/wiki/Advanced-Settings#substitutions) |
+| Language      | Unquoted ISO 639 alpha-2 or alpha-3 language code                                       | -Duser.language=de                                                    | See paragraph "language" [here.](https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/util/Locale.html)                                                 |
+| Region        | Unquoted ISO 3166 alpha-2 country code                                                  | -Duser.region=CH                                                      | See paragraph "country (region)" [here.](https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/util/Locale.html)                                         |
+
+# Substitutions
+
+Substitutions are used to dynamically resolve the content of some properties depending on the environment Cryptomator is
+started in, e.g. by inserting the path to the user's home folder. They may **only** be used in properties that start
+with `cryptomator.` (mind the dot) like `cryptomator.logDir`.
+All occurrences of the following substitution keys – in supported properties – are replaced by their respective variable
+values:
+
+| Substitution key  | Variable value                          |
+|-------------------|-----------------------------------------|
+| `@{appdir}`       | The application installation directory. |
+| `@{appdata}`      | `%APPDATA%` (Windows only).             |
+| `@{localappdata}` | `%LOCALAPPDATA%` (Windows only).        |
+| `@{userhome}`     | The user's home directory.              |
+
+Unknown substitution keys remain unchanged; a key without a value is replaced with an empty string.
 
 # Windows options
 
