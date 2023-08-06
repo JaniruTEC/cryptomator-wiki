@@ -2,39 +2,48 @@
 
 Cryptomator supports the following command line options:
 
-| Argument Name                                                 | Description                                                                                                                                   | OS         |
-|---------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|------------|
-| --version                                                     | Prints the Cryptomator version and exits (Alias: `-v`).                                                                                       | Linux, Mac |
-| -Djava.net.useSystemProxies=[Boolean]                         | Whether Cryptomator should use the system proxy settings (true) or no proxy (false) when connecting to the internet (e.g. for update checks). | All        |
-| -Dcryptomator.logDir=[DirPath]                                | The directory where Cryptomator stores it’s log files (e.g. application log, migration log).                                                  | All        |
-| -Dcryptomator.pluginDir=[DirPath]                             | The directory where Cryptomator discovers plugins.                                                                                            | All        |
-| -Dcryptomator.settingsPath=[FilePath]                         | The json-file to use for application settings.                                                                                                | All        |
-| -Dcryptomator.p12Path=[FilePath]                              | The path to your device key.                                                                                                                  | All        |
-| -Dcryptomator.ipcSocketPath=[FilePath]                        | The path to the IPC socket used for checking for an already running application instance.                                                     | All        |
-| -Dcryptomator.mountPointsDir=[DirPath]                        | The directory where Cryptomator mounts vaults if no per-vault location has been set.                                                          | All        |
-| -Dcryptomator.showTrayIcon=[Boolean]                          | Whether Cryptomator should show an icon in the system tray (true) or not (false).                                                             | All        |
-| -Dcryptomator.integrationsWin.autoStartShellLinkName=[String] | The name of the link created for starting Cryptomator at system startup.                                                                      | Win        |
-| -Dcryptomator.integrationsWin.keychainPaths=[FilePathList]    | The paths to load keychains from.                                                                                                             | Win        |
-| -Dcryptomator.integrationsMac.keychainServiceName=[String]    | The name of the keychain service.                                                                                                             | Mac        |
-| -Dcryptomator.loopbackAlias=[String]                          | The name of the WebDAV loopback alias.                                                                                                        | Win        |
-| -Duser.language=[Language]                                    | The language to use for the application interface.                                                                                            | All        |
-| -Duser.region=[Region]                                        | The optional region/dialect to use for the application interface. Requires `-Duser.language=[Language]` to be set.                            | All        |
+| Option Name | Description                               | Alias(es) | OS         |
+|-------------|-------------------------------------------|-----------|------------|
+| --version   | Prints the Cryptomator version and exits. | -v        | Linux, Mac |
 
-# Option Argument Types
+# Properties
 
-The command line options come with the following types:
+Cryptomator allows configuring parts of the environment using *properties.* For information on using properties, see [
+*Setting Properties.*](#setting-properties)
+The following properties are available for use:
 
-| Argument Type | Valid values                                                                            | Example                                                               | Notes                                                                                                                                                                |
-|---------------|-----------------------------------------------------------------------------------------|-----------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Boolean       | "true", "false"                                                                         | -Dcryptomator.showTrayIcon=true                                       | Boolean values are not quoted.                                                                                                                                       |
-| String        | Quoted text                                                                             | -Dcryptomator.loopbackAlias="Cryptomator"                             | Accepted characters/values are not defined by this document.                                                                                                         |
-| DirPath       | Quoted full path to a folder in the style of your OS, but always using "/" as separator | -Dcryptomator.logDir="/Users/Admin/Logs"                              | Might use [substitutions.](https://github.com/cryptomator/cryptomator/wiki/Advanced-Settings#substitutions)                                                          |
-| FilePath      | Quoted full path to a file in the style of your OS, but always using "/" as separator   | -Dcryptomator.settingsPath="C:/settings.json"                         | Might use [substitutions.](https://github.com/cryptomator/cryptomator/wiki/Advanced-Settings#substitutions)                                                          |
-| FilePathList  | List of `FilePaths` divided by ":" (Linux, macOS) or ";" (Windows).                     | -Dcryptomator.integrationsWin.keychainPaths="C:\file.one;C:\file.two" | The entire list is quoted instead of individual entries. Might use [substitutions.](https://github.com/cryptomator/cryptomator/wiki/Advanced-Settings#substitutions) |
-| Language      | Unquoted ISO 639 alpha-2 or alpha-3 language code                                       | -Duser.language=de                                                    | See paragraph "language" [here.](https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/util/Locale.html)                                                 |
-| Region        | Unquoted ISO 3166 alpha-2 country code                                                  | -Duser.region=CH                                                      | See paragraph "country (region)" [here.](https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/util/Locale.html)                                         |
+| Argument Name                                               | Description                                                                                                                                   | OS  |
+|-------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|-----|
+| java.net.useSystemProxies=[Boolean]                         | Whether Cryptomator should use the system proxy settings (true) or no proxy (false) when connecting to the internet (e.g. for update checks). | All |
+| cryptomator.logDir=[DirPath]                                | The directory where Cryptomator stores it’s log files (e.g. application log, migration log).                                                  | All |
+| cryptomator.pluginDir=[DirPath]                             | The directory where Cryptomator discovers plugins.                                                                                            | All |
+| cryptomator.settingsPath=[FilePath]                         | The json-file to use for application settings.                                                                                                | All |
+| cryptomator.p12Path=[FilePath]                              | The path to your device key.                                                                                                                  | All |
+| cryptomator.ipcSocketPath=[FilePath]                        | The path to the IPC socket used for checking for an already running application instance.                                                     | All |
+| cryptomator.mountPointsDir=[DirPath]                        | The directory where Cryptomator mounts vaults if no per-vault location has been set.                                                          | All |
+| cryptomator.showTrayIcon=[Boolean]                          | Whether Cryptomator should show an icon in the system tray (true) or not (false).                                                             | All |
+| cryptomator.integrationsWin.autoStartShellLinkName=[String] | The name of the link created for starting Cryptomator at system startup.                                                                      | Win |
+| cryptomator.integrationsWin.keychainPaths=[FilePathList]    | The paths to load keychains from.                                                                                                             | Win |
+| cryptomator.integrationsMac.keychainServiceName=[String]    | The name of the keychain service.                                                                                                             | Mac |
+| cryptomator.loopbackAlias=[String]                          | The name of the WebDAV loopback alias.                                                                                                        | Win |
+| user.language=[Language]                                    | The language to use for the application interface.                                                                                            | All |
+| user.region=[Region]                                        | The optional region/dialect to use for the application interface. Requires `user.language=[Language]` to be set.                              | All |
 
-# Substitutions
+## Property Argument Types
+
+Cryptomator's properties come with the following types:
+
+| Argument Type | Valid values                                                                            | Example                                                             | Notes                                                                                                                        |
+|---------------|-----------------------------------------------------------------------------------------|---------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|
+| Boolean       | "true", "false"                                                                         | cryptomator.showTrayIcon=true                                       | Boolean values are not quoted.                                                                                               |
+| String        | Quoted text                                                                             | cryptomator.loopbackAlias="Cryptomator"                             | Accepted characters/values are not defined by this document.                                                                 |
+| DirPath       | Quoted full path to a folder in the style of your OS, but always using "/" as separator | cryptomator.logDir="/Users/Admin/Logs"                              | Might use [substitutions.](#substitutions)                                                                                   |
+| FilePath      | Quoted full path to a file in the style of your OS, but always using "/" as separator   | cryptomator.settingsPath="C:/settings.json"                         | Might use [substitutions.](#substitutions)                                                                                   |
+| FilePathList  | List of `FilePaths` divided by ":" (Linux, macOS) or ";" (Windows).                     | cryptomator.integrationsWin.keychainPaths="C:\file.one;C:\file.two" | The entire list is quoted instead of individual entries. Might use [substitutions.](#substitutions)                          |
+| Language      | Unquoted ISO 639 alpha-2 or alpha-3 language code                                       | user.language=de                                                    | See paragraph "language" [here.](https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/util/Locale.html)         |
+| Region        | Unquoted ISO 3166 alpha-2 country code                                                  | user.region=CH                                                      | See paragraph "country (region)" [here.](https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/util/Locale.html) |
+
+## Substitutions
 
 Substitutions are used to dynamically resolve the content of some properties depending on the environment Cryptomator is
 started in, e.g. by inserting the path to the user's home folder. They may **only** be used in properties that start
@@ -51,15 +60,6 @@ values:
 
 Unknown substitution keys remain unchanged; a key without a value is replaced with an empty string.
 
-# Windows options
+## Setting Properties
 
-All of the above command line options can also be added to a Cryptomator installation on Windows. Configuration is done
-in a text file located under `C:\Program Files\Cryptomator\app\Cryptomator.cfg` or wherever you installed Cryptomator.
-
-E.g. to switch the UI language to Hungarian add the command line option from above to the `[JavaOptions]` section:
-
-```
-[JavaOptions]
-java-options=-Dcryptomator.logPath=%appdata%/Cryptomator/cryptomator.log
-java-options=-Duser.language=hu
-```
+**TODO**
