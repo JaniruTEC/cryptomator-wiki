@@ -62,4 +62,38 @@ Unknown substitution keys remain unchanged; a key without a value is replaced wi
 
 ## Setting Properties
 
-**TODO**
+All of the above properties can only be set in the advanced configuration file `Cryptomator.cfg`; they are *not*
+available on the command line.
+
+> **⚠️ Warning:** Editing the advanced configuration is not officially supported.
+> - Changes to the advanced configuration may be overwritten by updates.
+> - Properties may be changed or removed without warning.
+> - Changes to the advanced configuration may break your installation or yield unexpected behavior.
+
+> **Note:** Editing the advanced configuration may require elevated privileges (i.e. admin or root permissions).
+
+The following table lays out instructions to access the advanced configuration for your Operating System. The
+location may differ depending on Cryptomator's installation location:
+
+| OS      | Default path                                                 | Notes                                                                                                    |
+|---------|--------------------------------------------------------------|----------------------------------------------------------------------------------------------------------|
+| Windows | `C:\Program Files\Cryptomator\app\Cryptomator.cfg`           |                                                                                                          |
+| macOS   | `/Applications/Cryptomator.app/Contents/app/Cryptomator.cfg` | Might be located in the "User Application Folder": `~/Applications/...`                                  |
+| Linux   | `/opt/cryptomator/lib/app/cryptomator.cfg`                   | Alternatively use the command: `open $(dirname $(dirname $(readlink -f $(which cryptomator))))/lib/app/` |
+
+To replace a property, change the value after the equals sign in the corresponding entry in the `[JavaOptions]` section.
+
+**Example:** To disable the tray icon change the line  
+`java-options=-Dcryptomator.showTrayIcon=true` to  
+`java-options=-Dcryptomator.showTrayIcon=false`
+
+To add a property, add a line in the `[JavaOptions]` section of the form `java-options=-D[Name]=[Value]` (Mind the "
+-D").
+
+**Example:** To switch the UI language to Hungarian, add the property `user.language` with the value `hu`:
+
+```
+[JavaOptions]
+... Other options ...
+java-options=-Duser.language=hu
+```
