@@ -12,22 +12,23 @@ Cryptomator allows configuring parts of the environment using *properties.* For 
 *Setting Properties.*](#setting-properties)
 The following properties are available for use:
 
-| Argument Name                                               | Description                                                                                                                                   | OS  |
-|-------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|-----|
-| java.net.useSystemProxies=[Boolean]                         | Whether Cryptomator should use the system proxy settings (true) or no proxy (false) when connecting to the internet (e.g. for update checks). | All |
-| cryptomator.logDir=[DirPath]                                | The directory where Cryptomator stores it’s log files (e.g. application log, migration log).                                                  | All |
-| cryptomator.pluginDir=[DirPath]                             | The directory where Cryptomator discovers plugins.                                                                                            | All |
-| cryptomator.settingsPath=[FilePath]                         | The json-file to use for application settings.                                                                                                | All |
-| cryptomator.p12Path=[FilePath]                              | The path to your device key.                                                                                                                  | All |
-| cryptomator.ipcSocketPath=[FilePath]                        | The path to the IPC socket used for checking for an already running application instance.                                                     | All |
-| cryptomator.mountPointsDir=[DirPath]                        | The directory where Cryptomator mounts vaults if no per-vault location has been set.                                                          | All |
-| cryptomator.showTrayIcon=[Boolean]                          | Whether Cryptomator should show an icon in the system tray (true) or not (false).                                                             | All |
-| cryptomator.integrationsWin.autoStartShellLinkName=[String] | The name of the link created for starting Cryptomator at system startup.                                                                      | Win |
-| cryptomator.integrationsWin.keychainPaths=[FilePathList]    | The paths to load keychains from.                                                                                                             | Win |
-| cryptomator.integrationsMac.keychainServiceName=[String]    | The name of the keychain service.                                                                                                             | Mac |
-| cryptomator.loopbackAlias=[String]                          | The name of the WebDAV loopback alias.                                                                                                        | Win |
-| user.language=[Language]                                    | The language to use for the application interface.                                                                                            | All |
-| user.region=[Region]                                        | The optional region/dialect to use for the application interface. Requires `user.language=[Language]` to be set.                              | All |
+| Argument Name                                               | Description                                                                                                                                   | OS    |
+|-------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|-------|
+| java.net.useSystemProxies=[Boolean]                         | Whether Cryptomator should use the system proxy settings (true) or no proxy (false) when connecting to the internet (e.g. for update checks). | All   |
+| cryptomator.logDir=[DirPath]                                | The directory where Cryptomator stores it’s log files (e.g. application log, migration log).                                                  | All   |
+| cryptomator.pluginDir=[DirPath]                             | The directory where Cryptomator discovers plugins.                                                                                            | All   |
+| cryptomator.settingsPath=[FilePath]                         | The json-file to use for application settings.                                                                                                | All   |
+| cryptomator.p12Path=[FilePath]                              | The path to your device key.                                                                                                                  | All   |
+| cryptomator.ipcSocketPath=[FilePath]                        | The path to the IPC socket used for checking for an already running application instance.                                                     | All   |
+| cryptomator.mountPointsDir=[DirPath]                        | The directory where Cryptomator mounts vaults if no per-vault location has been set.                                                          | All   |
+| cryptomator.showTrayIcon=[Boolean]                          | Whether Cryptomator should show an icon in the system tray (true) or not (false).                                                             | All   |
+| cryptomator.integrationsWin.autoStartShellLinkName=[String] | The name of the link created for starting Cryptomator at system startup.                                                                      | Win   |
+| cryptomator.integrationsWin.keychainPaths=[FilePathList]    | The paths to load keychains from.                                                                                                             | Win   |
+| cryptomator.integrationsMac.keychainServiceName=[String]    | The name of the keychain service.                                                                                                             | Mac   |
+| cryptomator.integrationsLinux.trayIconsDir=[DirPath]        | The directory where Cryptomator looks for icons to use for the system tray.                                                                   | Linux |
+| cryptomator.loopbackAlias=[String]                          | The name of the WebDAV loopback alias.                                                                                                        | Win   |
+| user.language=[Language]                                    | The language to use for the application interface.                                                                                            | All   |
+| user.region=[Region]                                        | The optional region/dialect to use for the application interface. Requires `user.language=[Language]` to be set.                              | All   |
 
 ## Property Argument Types
 
