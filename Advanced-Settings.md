@@ -65,8 +65,11 @@ Unknown substitution keys remain unchanged; a key without a value is replaced wi
 
 All of the above properties can only be set in the advanced configuration file `Cryptomator.cfg`; they are *not*
 available on the command line.
-Each user can have their own advanced configuration file ("per-user advanced configuration"), which takes precedence
-over the advanced configuration of the system ("system-wide advanced configuration") for that user.
+Each user can have
+[their own advanced configuration file ("per-user advanced configuration"),](#locating-the-per-user-advanced-configuration)
+which takes precedence over
+[the advanced configuration of the system ("system-wide advanced configuration")](#locating-the-system-wide-advanced-configuration)
+for that user.
 
 > **⚠️ Warning:** Editing the advanced configuration is not officially supported.
 > - Changes to the _system-wide advanced configuration_ may be overwritten by updates.
@@ -78,6 +81,9 @@ over the advanced configuration of the system ("system-wide advanced configurati
 > - The _per-user advanced configuration_ needs to contain all common properties _as well as_ differing ones.
 > - Changes to the _system-wide advanced configuration_ will not have any effect if a _per-user advanced configuration_
     exists for that user.
+
+For a more technical explanation of the structure and location of the advanced configuration,
+please see the [upstream specification.](https://bugs.openjdk.org/browse/JDK-8287060)
 
 ### Locating the _system-wide advanced configuration_
 
