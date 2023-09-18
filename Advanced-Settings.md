@@ -93,6 +93,18 @@ The location may differ depending on Cryptomator's installation location:
 | macOS   | `/Applications/Cryptomator.app/Contents/app/Cryptomator.cfg` | Might be located in the "User Application Folder": `~/Applications/...`                                  |
 | Linux   | `/opt/cryptomator/lib/app/cryptomator.cfg`                   | Alternatively use the command: `open $(dirname $(dirname $(readlink -f $(which cryptomator))))/lib/app/` |
 
+### Locating the _per-user advanced configuration_
+
+The following table lays out instructions to access the _per-user advanced configuration_ for your Operating System.  
+You may need to create the file or its containing folder. If at least one _per-user advanced configuration_ exists, it
+takes precedence over the _system-wide advanced configuration_ for that user:
+
+| OS      | Path                                                                                          | Notes                                                      |
+|---------|-----------------------------------------------------------------------------------------------|------------------------------------------------------------|
+| Windows | `%LocalAppData%\Cryptomator\Cryptomator.cfg` (\*)<br/>`%AppData%\Cryptomator\Cryptomator.cfg` | If both exist, the path marked with (\*) takes precedence. |
+| macOS   | `~/Library/Application Support/Cryptomator/Cryptomator.cfg`                                   |                                                            |
+| Linux   | `~/.local/cryptomator/Cryptomator.cfg` (\*)<br/>`~/.cryptomator/Cryptomator.cfg`              | If both exist, the path marked with (\*) takes precedence. |
+
 ### Editing the advanced configuration
 
 To replace a property, change the value after the equals sign in the corresponding entry in the `[JavaOptions]` section.
