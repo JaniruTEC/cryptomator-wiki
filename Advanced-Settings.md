@@ -68,16 +68,16 @@ available on the command line.
 Each user can have their own advanced configuration file ("per-user advanced configuration"), which takes precedence
 over the advanced configuration of the system ("system-wide advanced configuration") for that user.
 
-> **Note:** A user's _per-user advanced configuration_ and the _system-wide advanced configuration_ are **not** merged.
-> - The _per-user advanced configuration_ needs to contain all common properties _as well as_ differing ones.
-> - Changes to the _system-wide advanced configuration_ will not have any effect if a _per-user advanced configuration_
-    exists for that user.
-
 > **⚠️ Warning:** Editing the advanced configuration is not officially supported.
 > - Changes to the _system-wide advanced configuration_ may be overwritten by updates.
 > - A user's _per-user advanced configuration_ may quietly become outdated after an update.
 > - Properties may be changed or removed without warning.
 > - Changes to the advanced configuration may break your installation or yield unexpected behavior.
+
+> **Note:** A user's _per-user advanced configuration_ and the _system-wide advanced configuration_ are **not** merged.
+> - The _per-user advanced configuration_ needs to contain all common properties _as well as_ differing ones.
+> - Changes to the _system-wide advanced configuration_ will not have any effect if a _per-user advanced configuration_
+    exists for that user.
 
 ### Locating the _system-wide advanced configuration_
 
