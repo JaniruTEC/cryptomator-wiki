@@ -82,6 +82,9 @@ for that user.
 > - Changes to the _system-wide advanced configuration_ will not have any effect if a _per-user advanced configuration_
     exists for that user.
 
+> **Note:** If it exists, the usage of a user's _per-user advanced configuration_ can not currently be disabled.
+> Please see [this issue](https://github.com/cryptomator/cryptomator/issues/3119) for more information.
+
 For a more technical explanation of the structure and location of the advanced configuration,
 please see the [upstream specification.](https://bugs.openjdk.org/browse/JDK-8287060)
 
