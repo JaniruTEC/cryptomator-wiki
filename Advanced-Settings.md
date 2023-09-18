@@ -65,16 +65,27 @@ Unknown substitution keys remain unchanged; a key without a value is replaced wi
 
 All of the above properties can only be set in the advanced configuration file `Cryptomator.cfg`; they are *not*
 available on the command line.
+Each user can have their own advanced configuration file ("per-user advanced configuration"), which takes precedence
+over the advanced configuration of the system ("system-wide advanced configuration") for that user.
+
+> **Note:** A user's _per-user advanced configuration_ and the _system-wide advanced configuration_ are **not** merged.
+> - The _per-user advanced configuration_ needs to contain all common properties _as well as_ differing ones.
+> - Changes to the _system-wide advanced configuration_ will not have any effect if a _per-user advanced configuration_
+    exists for that user.
 
 > **⚠️ Warning:** Editing the advanced configuration is not officially supported.
-> - Changes to the advanced configuration may be overwritten by updates.
+> - Changes to the _system-wide advanced configuration_ may be overwritten by updates.
+> - A user's _per-user advanced configuration_ may quietly become outdated after an update.
 > - Properties may be changed or removed without warning.
 > - Changes to the advanced configuration may break your installation or yield unexpected behavior.
 
-> **Note:** Editing the advanced configuration may require elevated privileges (i.e. admin or root permissions).
+### Locating the _system-wide advanced configuration_
 
-The following table lays out instructions to access the advanced configuration for your Operating System. The
-location may differ depending on Cryptomator's installation location:
+> **Note:** Editing the _system-wide advanced configuration_ may require elevated privileges (i.e. admin or root
+> permissions).
+
+The following table lays out instructions to access the _system-wide advanced configuration_ for your Operating System.
+The location may differ depending on Cryptomator's installation location:
 
 | OS      | Default path                                                 | Notes                                                                                                    |
 |---------|--------------------------------------------------------------|----------------------------------------------------------------------------------------------------------|
@@ -82,19 +93,21 @@ location may differ depending on Cryptomator's installation location:
 | macOS   | `/Applications/Cryptomator.app/Contents/app/Cryptomator.cfg` | Might be located in the "User Application Folder": `~/Applications/...`                                  |
 | Linux   | `/opt/cryptomator/lib/app/cryptomator.cfg`                   | Alternatively use the command: `open $(dirname $(dirname $(readlink -f $(which cryptomator))))/lib/app/` |
 
+### Editing the advanced configuration
+
 To replace a property, change the value after the equals sign in the corresponding entry in the `[JavaOptions]` section.
 
 **Example:** To disable the tray icon change the line  
 `java-options=-Dcryptomator.showTrayIcon=true` to  
 `java-options=-Dcryptomator.showTrayIcon=false`
 
-To add a property, add a line in the `[JavaOptions]` section of the form `java-options=-D[Name]=[Value]` (Mind the "
+To add a property, add a line in the `[JavaOptions]` section of the form `java-options=-D[Name]=[Value]` (mind the "
 -D").
 
 **Example:** To switch the UI language to Hungarian, add the property `user.language` with the value `hu`:
 
 ```
 [JavaOptions]
-... Other options ...
+# ... Other options ...
 java-options=-Duser.language=hu
 ```
