@@ -71,18 +71,20 @@ which takes precedence over
 [the advanced configuration of the system ("system-wide advanced configuration")](#locating-the-system-wide-advanced-configuration)
 for that user.
 
-> **⚠️ Warning:** Editing the advanced configuration is not officially supported.
+> [!WARNING]
+> Editing the advanced configuration is not officially supported.
 > - Changes to the _system-wide advanced configuration_ may be overwritten by updates.
 > - A user's _per-user advanced configuration_ may quietly become outdated after an update.
 > - Properties may be changed or removed without warning.
 > - Changes to the advanced configuration may break your installation or yield unexpected behavior.
 
-> **Note:** A user's _per-user advanced configuration_ and the _system-wide advanced configuration_ are **not** merged.
+> [!NOTE]
+> A user's _per-user advanced configuration_ and the _system-wide advanced configuration_ are **not** merged.
 > - The _per-user advanced configuration_ needs to contain all common properties _as well as_ differing ones.
 > - Changes to the _system-wide advanced configuration_ will not have any effect if a _per-user advanced configuration_
     exists for that user.
-
-> **Note:** If it exists, the usage of a user's _per-user advanced configuration_ can not currently be disabled.
+> 
+> If it exists, the usage of a user's _per-user advanced configuration_ can not currently be disabled.
 > Please see [this issue](https://github.com/cryptomator/cryptomator/issues/3119) for more information.
 
 For a more technical explanation of the structure and location of the advanced configuration,
@@ -90,7 +92,8 @@ please see the [upstream specification.](https://bugs.openjdk.org/browse/JDK-828
 
 ### Locating the _system-wide advanced configuration_
 
-> **Note:** Editing the _system-wide advanced configuration_ may require elevated privileges (i.e. admin or root
+> [!NOTE]
+> Editing the _system-wide advanced configuration_ may require elevated privileges (i.e. admin or root
 > permissions).
 
 The following table lays out instructions to access the _system-wide advanced configuration_ for your Operating System.
@@ -118,9 +121,12 @@ takes precedence over the _system-wide advanced configuration_ for that user:
 
 To replace a property, change the value after the equals sign in the corresponding entry in the `[JavaOptions]` section.
 
-**Example:** To disable the tray icon change the line  
-`java-options=-Dcryptomator.showTrayIcon=true` to  
-`java-options=-Dcryptomator.showTrayIcon=false`
+**Example:** To disable the tray icon change the line as follows
+
+```diff
+- java-options=-Dcryptomator.showTrayIcon=true
++ java-options=-Dcryptomator.showTrayIcon=false
+```  
 
 To add a property, add a line in the `[JavaOptions]` section of the form `java-options=-D[Name]=[Value]` (mind the "
 -D").
